@@ -19,9 +19,13 @@ const invertBtn = document.getElementById('invert-btn');
 
 invertBtn.addEventListener('click' , function(){
 
-  const userWord = document.querySelector('#string').value;
-  console.log(userWord);
-  
+  let userWord = document.querySelector('#string').value;
+
+  while(!isNaN(userWord)){
+    alert('Non hai inserito una parola, riprovare')
+    userWord = prompt('Inserisci la parola correttamente').trim();
+    console.log('La parola inserita dall\'utente è:', userWord);
+  }
 
   if(userWord === reverseString(userWord)){
     console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, risulta palindroma.');
