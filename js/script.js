@@ -15,10 +15,12 @@
 */
 
 
- // CONSEGNA - Palidroma
+
+
+// CONSEGNA - Palidroma 
 
 const invertBtn = document.getElementById('invert-btn');
-  
+
 invertBtn.addEventListener('click' , function(){
 
   let userWord = document.querySelector('#string').value;
@@ -29,15 +31,55 @@ invertBtn.addEventListener('click' , function(){
     console.log('La parola inserita dall\'utente è:', userWord);
   }
 
-  console.log('La parola inserita dall\'utente è:', userWord);
-
-  if(userWord === reverseString(userWord)){
+  if(userWord === inverseString(userWord)){
     console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, risulta palindroma.');
   }else{
-    console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, non risulta palindroma.');
+    console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, (', inverseString(userWord) , ') non risulta palindroma.');
+  }
+
+  function inverseString(parola){
+   let wordArray = [];
+   let inversedWord = '';
+
+   for (let i = userWord.length - 1; i >= 0; i--) {
+    wordArray.push(userWord.charAt(i));
+   }
+
+    for (let i = 0; i < wordArray.length; i++) {
+      inversedWord += wordArray[i];
+    }
+
+   return inversedWord;
   }
 
 });
+
+
+ // CONSEGNA - Palidroma metodo 2
+
+/*
+  const invertBtn = document.getElementById('invert-btn');
+    
+  invertBtn.addEventListener('click' , function(){
+
+    let userWord = document.querySelector('#string').value;
+
+    while(!isNaN(userWord)){
+      alert('Non hai inserito una parola, riprovare')
+      userWord = prompt('Inserisci la parola correttamente').trim();
+      console.log('La parola inserita dall\'utente è:', userWord);
+    }
+
+    console.log('La parola inserita dall\'utente è:', userWord);
+
+    if(userWord === reverseString(userWord)){
+      console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, risulta palindroma.');
+    }else{
+      console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, (', reverseString(userWord) , ') non risulta palindroma.');
+    }
+
+  });
+*/
 
 
 
@@ -113,11 +155,11 @@ evenOddBtn.addEventListener('click', function(){
 // Inverti stringhe
   function reverseString(string) {
     const wordArray = string.split("");
-    console.log('Questo è l\'array della parola', wordArray);
+    // console.log('Questo è l\'array della parola', wordArray);
     const reverseArray = wordArray.reverse();
-    console.log('Questo è l\'array invertito', reverseArray);
+    // console.log('Questo è l\'array invertito', reverseArray);
     const reversedString = reverseArray.join("")
-    console.log('Questo è la stringa invertita', reversedString);
+    // console.log('Questo è la stringa invertita', reversedString);
     return reversedString;
   }
 //
