@@ -13,3 +13,33 @@
   6b -Dichiariamo chi ha vinto.
   Bonus: L’inserimento avviene tramite un campo input
 */
+
+const invertBtn = document.getElementById('invert-btn');
+  
+
+invertBtn.addEventListener('click' , function(){
+
+  const userWord = document.querySelector('#string').value;
+  console.log(userWord);
+  
+
+  if(userWord === reverseString(userWord)){
+    console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, risulta palindroma.');
+  }else{
+    console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, non risulta palindroma.');
+  }
+
+  function reverseString(string) {
+    const wordArray = string.split("");
+    console.log('Questo è l\'array della parola', wordArray);
+    const reverseArray = wordArray.reverse();
+    console.log('Questo è l\'array invertito', reverseArray);
+    const reversedString = reverseArray.join("")
+    console.log('Questo è la stringa invertita', reversedString);
+    return reversedString;
+  }
+});
+
+
+
+
