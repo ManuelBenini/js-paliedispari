@@ -27,6 +27,8 @@ invertBtn.addEventListener('click' , function(){
     console.log('La parola inserita dall\'utente è:', userWord);
   }
 
+  console.log('La parola inserita dall\'utente è:', userWord);
+
   if(userWord === reverseString(userWord)){
     console.log('La parola inserita dall\'utente -->', userWord , '<-- se invertita, risulta palindroma.');
   }else{
