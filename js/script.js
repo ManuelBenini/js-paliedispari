@@ -108,7 +108,6 @@ evenOddBtn.addEventListener('click', function(){
 });
 
 
-
 // FUNCTIONS 
 
 // Inverti stringhe
